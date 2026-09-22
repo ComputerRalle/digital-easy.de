@@ -47,7 +47,6 @@
   const form = document.getElementById('contact-form');
   if (!form) return;
   const name = form.elements.namedItem('name');
-  const email = form.elements.namedItem('email');
   const message = form.elements.namedItem('message');
   const status = document.getElementById('contact-status');
   for (const field of [name, message]) {
@@ -61,7 +60,6 @@
     if (!form.reportValidity()) return;
     const body = [
       `Name: ${name.value.trim()}`,
-      ...(email.value.trim() ? [`Antwortadresse: ${email.value.trim()}`] : []),
       '', 'Nachricht:',
       message.value.trim().replace(/\r\n|\r|\n/g, '\r\n'),
     ].join('\r\n');
